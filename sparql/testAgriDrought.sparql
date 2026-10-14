@@ -1,0 +1,15 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sosa: <http://www.w3.org/ns/sosa/>
+PREFIX ssn: <http://www.w3.org/ns/ssn/>
+PREFIX ssnagri: <http://www.semanticweb.org/csreiitb/ontologies/ssnagri#>
+SELECT ?Crop ?Location  ?Disease ?Suggestions
+	WHERE { 
+	?Crop a ssnagri:Crop .
+	?Disease a ssnagri:Disease.
+	?Crop ssnagri:hasDisease ?Disease .
+	?Crop ssnagri:hasSuggestedRemedies ?Suggestions .
+	?Crop ssnagri:isLocatedIn ?Location
+ }
