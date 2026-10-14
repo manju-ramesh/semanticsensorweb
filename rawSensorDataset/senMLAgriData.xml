@@ -1,0 +1,6 @@
+<zone name="home">
+	<senml bn="urn:agri:uuid:c68ad78b-09eb-4303-ae3c-d5d23149ee96">
+		<e n="luminosity" t="0" u="Lux" v="1500" />
+		<e n="temperature" t="1374069830362" u="Cel" v="50" />
+	</senml>
+</zone>

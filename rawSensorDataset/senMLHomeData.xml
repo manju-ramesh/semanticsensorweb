@@ -1,0 +1,8 @@
+<zone name="home">
+	<senml bn="urn:home:uuid:c68ad78b-09eb-4303-ae3c-d5d23149ee96">
+		<e n="presence" t="0" u=" " v="1" />
+		<e n="luminosity" t="0" u="Lux" v="0" />
+		<e n="sound" t="0" u="Decibel" v="80" />
+		<e n="temperature" t="1374069830362" u="Cel" v="30" />
+	</senml>
+</zone>
