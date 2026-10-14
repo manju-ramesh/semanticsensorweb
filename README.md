@@ -1,6 +1,6 @@
 # Semantic Sensor Web and IoT for Agricultural Applications
 
-This repository contains the ontologies, rules, and codebase developed as part of my M.Tech thesis project at **IIT Bombay (Centre of Studies in Resources Engineering)**. 
+This repository contains the ontologies, rules, and codebase developed as part of my M.Tech thesis project at **IIT Bombay**. 
 
 The project focuses on building a semantics-driven decision support system that integrates heterogeneous agro-meteorological IoT sensor data (via **SenseQube**) to predict crop disease susceptibility—specifically focusing on *Phytophthora* in citrus orchards—using W3C SSN/SOSA ontologies and automated reasoning.
 
@@ -16,6 +16,11 @@ The project focuses on building a semantics-driven decision support system that 
   * **Querying Layer:** Formulates **SPARQL** queries against an RDF Triple Store to retrieve actionable insights and recommendations for farmers.
 
 ---
+## 🏗️ System Architecture
+
+![Overall Architecture](./overall_architecture.png)
+
+The architecture illustrates the flow of raw agro-meteorological sensor data into RDF triples, passing through SWRL reasoning engines and SPARQL querying interfaces.
 
 ## 🛠️ Tech & Standards Stack
 
