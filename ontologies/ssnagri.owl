@@ -1,0 +1,1961 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#"
+     xml:base="http://www.semanticweb.org/csreiitb/ontologies/ssnagri"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:ssn="http://www.w3.org/ns/ssn/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:qudt="http://qudt.org/schema/qudt#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:sosa="http://www.w3.org/ns/sosa/"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:swrla="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/"
+     xmlns:ssnagri="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri">
+        <owl:imports rdf:resource="http://www.w3.org/ns/ssn/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled -->
+
+    <owl:AnnotationProperty rdf:about="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasCab -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasCab">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameters"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Crop"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDisease"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDiseaseSeverityIndex"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSuggestedRemedies"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#isLocatedIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasLAI"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasCrop -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasCrop">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#isLocatedIn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasCrop"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Crop"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Crop"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDisease"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDiseaseSeverityIndex"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSuggestedRemedies"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#isLocatedIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDisease -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDisease">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Crop"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDisease"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDiseaseSeverityIndex"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSuggestedRemedies"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#isLocatedIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDiseaseSeverity -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDiseaseSeverity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Crop"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDisease"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDiseaseSeverityIndex"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSuggestedRemedies"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#isLocatedIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#DiseaseStatus"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDiseaseSeverityIndex -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDiseaseSeverityIndex">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Crop"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDisease"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDiseaseSeverityIndex"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSuggestedRemedies"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#isLocatedIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasGSI -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasGSI">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDiseaseSeverityIndex"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Crop"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDisease"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDiseaseSeverityIndex"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSuggestedRemedies"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#isLocatedIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasLAI -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasLAI">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameters"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Crop"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDisease"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDiseaseSeverityIndex"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSuggestedRemedies"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#isLocatedIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+            </owl:Restriction>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameters -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameters">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Crop"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDisease"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDiseaseSeverityIndex"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSuggestedRemedies"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#isLocatedIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasRainfall -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasRainfall">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasTemperature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasRemedies -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasRemedies">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSuggestedRemedies -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSuggestedRemedies">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Crop"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDisease"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDiseaseSeverityIndex"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSuggestedRemedies"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#isLocatedIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSymptoms -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSymptoms">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Symptoms"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasTemperature -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasTemperature">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#isLocatedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#isLocatedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hasFeatureOfInterest -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hasFeatureOfInterest">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hasResult -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hasResult">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hosts -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hosts">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/isFeatureOfInterestOf -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isFeatureOfInterestOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/isHostedBy -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isHostedBy">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/isResultOf -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/isResultOf">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/madeBySensor -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeBySensor">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/madeObservation -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeObservation">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/observedProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/observedProperty">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameterValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameterValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameterValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameterValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSeverityIndexValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSeverityIndexValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#long -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/hasSimpleResult -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/hasSimpleResult">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Stimulus"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/phenomenonTime"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/resultTime -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/resultTime">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Stimulus"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/phenomenonTime"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:domain>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://qudt.org/schema/qudt#Unit -->
+
+    <owl:Class rdf:about="http://qudt.org/schema/qudt#Unit"/>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Chlorophyll -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Chlorophyll">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#LAI"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Crop -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Crop">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDisease"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDiseaseSeverityIndex"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSuggestedRemedies"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#isLocatedIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease"/>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#DiseaseStatus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#DiseaseStatus"/>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#GummosisSeverityIndex -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#GummosisSeverityIndex">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#LAI -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#LAI">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasCrop"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Crop"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Rainfall -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Rainfall">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Temperature"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#SpatialLocation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#SpatialLocation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Symptoms -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Symptoms"/>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Temperature -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Temperature">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Unit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Unit"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Actuator -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Actuator">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isHostedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/forProperty"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasDeployment"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Deployment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasSubSystem"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/implements"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasSubSystem"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/FeatureOfInterest -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sampler -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sampler">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isHostedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasDeployment"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Deployment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasSubSystem"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/implements"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasSubSystem"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sampling -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sampling">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/Sensor -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/Sensor">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isHostedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasDeployment"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Deployment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/hasSubSystem"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/implements"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/hasSubSystem"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#BarkTrimming -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#BarkTrimming">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Benoda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Benoda">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+        <sosa:isFeatureOfInterestOf rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#ObsRainfallBenoda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#BenodaFarm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#BenodaFarm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasCrop"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Crop"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+            </owl:Restriction>
+        </rdf:type>
+        <hasCrop rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CitrusBenoda"/>
+        <hasEnvParameters rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Rainfall_Benoda"/>
+        <hasEnvParameters rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Temperature_Benoda"/>
+        <hasRainfall rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Rainfall_Benoda"/>
+        <hasTemperature rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Temperature_Benoda"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CabBenoda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CabBenoda">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Chlorophyll"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+        <!-- <hasPlantParameterValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">27</hasPlantParameterValue> -->
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CabNagziri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CabNagziri">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Chlorophyll"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+        <!-- <hasPlantParameterValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20</hasPlantParameterValue> -->
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CitrusBenoda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CitrusBenoda">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Crop"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDisease"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDiseaseSeverityIndex"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSuggestedRemedies"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#isLocatedIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+            </owl:Restriction>
+        </rdf:type>
+        <hasCab rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CabBenoda"/>
+    <!--     <hasDisease rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Gummosis"/>
+        <hasDiseaseSeverity rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#VerySevereDisease"/> -->
+        <hasDiseaseSeverityIndex rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#GSI_Benoda"/>
+        <hasGSI rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#GSI_Benoda"/>
+        <hasLAI rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#LAIBenoda"/>
+        <hasPlantParameters rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CabBenoda"/>
+        <hasPlantParameters rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#LAIBenoda"/>
+        <isLocatedIn rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#BenodaFarm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CitrusCrops_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CitrusCrops_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Crop"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDisease"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasDiseaseSeverityIndex"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasPlantParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasSuggestedRemedies"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#isLocatedIn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+            </owl:Restriction>
+        </rdf:type>
+        <hasCab rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CabNagziri"/>
+    <!--     <hasDisease rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Gummosis"/>
+        <hasDiseaseSeverity rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#SevereDisease"/> -->
+        <hasDiseaseSeverityIndex rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#GSI_Nagziri"/>
+        <hasGSI rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#GSI_Nagziri"/>
+        <hasLAI rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#LAINAgziri"/>
+        <hasPlantParameters rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CabNagziri"/>
+        <hasPlantParameters rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#LAINAgziri"/>
+        <isLocatedIn rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#NagziriFarm"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#FungicideSpraying -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#FungicideSpraying">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#GSI_Benoda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#GSI_Benoda">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#GummosisSeverityIndex"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+        <!-- <hasSeverityIndexValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.19890</hasSeverityIndexValue> -->
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#GSI_Nagziri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#GSI_Nagziri">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#GummosisSeverityIndex"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Indices"/>
+        <!-- <hasSeverityIndexValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.0795</hasSeverityIndexValue> -->
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Gummosis -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Gummosis">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Disease"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#ImproveDrainage -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#ImproveDrainage">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#LAIBenoda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#LAIBenoda">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#LAI"/>
+    <!--     <hasPlantParameterValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.5</hasPlantParameterValue> -->
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#LAINAgziri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#LAINAgziri">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CropParameters"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#LAI"/>
+        <!-- <hasPlantParameterValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">5</hasPlantParameterValue> -->
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#NagziriFarm -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#NagziriFarm">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Location"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasCrop"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Crop"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#hasEnvParameters"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+            </owl:Restriction>
+        </rdf:type>
+        <hasCrop rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#CitrusCrops_2"/>
+        <hasEnvParameters rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Rainfall_Nagziri"/>
+        <hasEnvParameters rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Temperature_Nagziri"/>
+        <hasRainfall rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Rainfall_Nagziri"/>
+        <hasTemperature rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Temperature_Nagziri"/>
+        <sosa:isFeatureOfInterestOf rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#ObsTempNagziri"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Nagziri_FOI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Nagziri_FOI">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/FeatureOfInterest"/>
+        <sosa:isFeatureOfInterestOf rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#ObsRainfallNagziri"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#NoDisease -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#NoDisease">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#DiseaseStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#ObsRainfallBenoda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#ObsRainfallBenoda">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Stimulus"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/phenomenonTime"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <sosa:hasFeatureOfInterest rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Benoda"/>
+        <!-- <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">700</sosa:hasSimpleResult> -->
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#ObsRainfallNagziri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#ObsRainfallNagziri">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Stimulus"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/phenomenonTime"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <sosa:hasFeatureOfInterest rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Nagziri_FOI"/>
+        <!-- <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">600</sosa:hasSimpleResult> -->
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#ObsTempBenoda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#ObsTempBenoda">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Stimulus"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/phenomenonTime"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <sosa:observedProperty rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#PropertyTempBenoda"/>
+        <!-- <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">37</sosa:hasSimpleResult> -->
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#ObsTempNagziri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#ObsTempNagziri">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Result"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/usedProcedure"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Procedure"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Stimulus"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasResult"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/hasFeatureOfInterest"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/madeBySensor"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/phenomenonTime"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/wasOriginatedBy"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/resultTime"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdf:type>
+        <sosa:hasFeatureOfInterest rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#NagziriFarm"/>
+        <!-- <sosa:hasSimpleResult rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">36</sosa:hasSimpleResult> -->
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#OffsetOfDisease -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#OffsetOfDisease">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#DiseaseStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#OozingBark -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#OozingBark">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Symptoms"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#PropertyTempBenoda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#PropertyTempBenoda">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/ObservableProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa/isObservedBy"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/sosa/observedProperty"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.w3.org/ns/ssn/isProxyFor"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Stimulus"/>
+            </owl:Restriction>
+        </rdf:type>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Rainfall_Benoda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Rainfall_Benoda">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Rainfall"/>
+<!--         <hasEnvParameterValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">700</hasEnvParameterValue>
+ -->    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Rainfall_Nagziri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Rainfall_Nagziri">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Rainfall"/>
+<!--         <hasEnvParameterValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">600</hasEnvParameterValue>
+ -->    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Rainfall_Sensor_Benoda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Rainfall_Sensor_Benoda">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Rainfall_Sensor_Nagziri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Rainfall_Sensor_Nagziri">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#SenseQube_Benoda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#SenseQube_Benoda">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#SenseQube_Nagziri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#SenseQube_Nagziri">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Platform"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#SevereDisease -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#SevereDisease">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#DiseaseStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#SoilSolarization -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#SoilSolarization">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Remedies"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Temperature_Benoda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Temperature_Benoda">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Temperature"/>
+<!--         <hasEnvParameterValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">37</hasEnvParameterValue>
+ -->    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Temperature_Nagziri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Temperature_Nagziri">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#EnvironmentalParameters"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Temperature"/>
+<!--         <hasEnvParameterValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">36</hasEnvParameterValue>
+ -->    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Temperature_Sensor_Benoda -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Temperature_Sensor_Benoda">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Temperature_Sensor_Nagziri -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#Temperature_Sensor_Nagziri">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Sensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/csreiitb/ontologies/ssnagri#VerySevereDisease -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#VerySevereDisease">
+        <rdf:type rdf:resource="http://www.semanticweb.org/csreiitb/ontologies/ssnagri#DiseaseStatus"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/forProperty"/>
+        <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa/ActuatableProperty"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/ssn/forProperty"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/ssn/Property"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Restriction>
+    
+
+
+
+
+</rdf:RDF>
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
