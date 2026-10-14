@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE rdf:RDF [
+         <!ENTITY rdfs	"http://www.w3.org/2000/01/rdf-schema#">
+         <!ENTITY owl   "http://www.w3.org/2002/07/owl#" >
+         <!ENTITY home "http://sensormeasurement.appspot.com/ont/m3/home#"> 
+         <!ENTITY home-dataset "http://sensormeasurement.appspot.com/dataset/home-dataset/"> 
+         <!ENTITY agri "http://www.agriIoT/ont/agri#"> 
+         <!ENTITY agri-dataset "http://www.agriIoT/dataset/agri-dataset/"> 
+         <!ENTITY foaf "http://xmlns.com/foaf/0.1/"> 
+         <!ENTITY xsd   "http://www.w3.org/2001/XMLSchema#">  
+         <!ENTITY food "http://kmi.open.ac.uk/projects/smartproducts/ontologies/food.owl#" >
+         <!ENTITY fruit_tropical "http://www.semanticweb.org/ontologies/2008/9/Ontology_fruits_tropical.owl#" >
+         <!ENTITY OntoReaChir "http://www.yonamoke.com/ics/en/ressources">
+         <!ENTITY Person_SH_Ontology "http://www.gdst.uqam.ca/Documents/Ontologies/HIT/Person_SH_Ontology.owl#">
+         <!ENTITY Habitat_SH_Ontology "http://www.gdst.uqam.ca/Documents/Ontologies/HIT/Habitat_SH_Ontology.owl#">
+      	 <!ENTITY m3	"http://sensormeasurement.appspot.com/m3#"> 
+         <!ENTITY sweet_season "http://sweet.jpl.nasa.gov/2.3/reprTimeSeason.owl">
+         <!ENTITY sweet_day "http://sweet.jpl.nasa.gov/2.3/reprTimeDay.owl">
+         <!ENTITY acco "http://purl.org/acco/ns#">
+         <!ENTITY dogont "http://elite.polito.it/ontologies/dogont.owl#">
+         
+         
+]> 
+<rdf:RDF
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="&rdfs;"
+        xmlns="&agri-dataset;"
+        xml:base="&agri-dataset;"
+        xmlns:agri-dataset="&agri-dataset;"
+        xmlns:agri="&agri;"
+        xmlns:home-dataset="&home-dataset;"
+        xmlns:home="&home;"
+        xmlns:foaf="&foaf;"
+        xmlns:acco="&acco;"
+        xmlns:m3="&m3;"
+        xmlns:fruit_tropical="&fruit_tropical;"
+        xmlns:Person_SH_Ontology="&Person_SH_Ontology;"
+        xmlns:Habitat_SH_Ontology="&Habitat_SH_Ontology;"
+        xmlns:OntoReaChir="&OntoReaChir;"
+        xmlns:food="&food;"
+        xmlns:owl="&owl;"
+        xmlns:dogont="&dogont;"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xmlns:dcterms="http://purl.org/dc/terms/"
+        xmlns:xsd="&xsd;"
+       	xmlns:vann="http://purl.org/vocab/vann/"
+       	xmlns:sweet_season="&sweet_season;"
+       	xmlns:sweet_day="&sweet_day;"
+       	xmlns:cc="http://creativecommons.org/ns#"
+       	xmlns:vs="http://www.w3.org/2003/06/sw-vocab-status/ns#">
+ 
+        <!--     Machine to Machine Measurement (M3) Framework 
+    Copyright(c) 2012 - 2015 Eurecom
+
+    M3 is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+
+    M3 is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with M3. The full GNU General Public License is 
+   included in this distribution in the file called "COPYING". If not, 
+   see <http://www.gnu.org/licenses/>.
+
+  Contact Information
+  M3 : gyrard__at__eurecom.fr, bonnet__at__eurecom.fr, karima.boudaoud__at__unice.fr
+  
+The M3 framework has been designed and implemented during Amelie Gyrard's thesis.
+She is a PhD student at Eurecom under the supervision of Prof. Christian Bonnet (Eurecom) and Dr. Karima Boudaoud (I3S-CNRS/University of Nice Sophia Antipolis).
+This work is supported by the Com4Innov platform of the Pole SCS and DataTweet (ANR-13-INFR-0008). 
+  
+  Address      : Eurecom, Campus SophiaTech, 450 Route des Chappes, CS 50193 - 06904 Biot Sophia Antipolis cedex, FRANCE
+  -->
+ 
+ 	<!-- ################################################ DROUGHT ############################################################################ -->
+	
+	<agri:Status rdf:about="SevereDrought">		
+		<rdfs:label xml:lang="en">SevereDrought</rdfs:label>
+		<rdfs:label xml:lang="fr"></rdfs:label>
+		<rdfs:comment xml:lang="en"></rdfs:comment>
+		<dc:description xml:lang="en">Rule: IF m3:Luminosity greaterThan 750 and LowerThan 2000 m3:Lux THEN HighLighting [Rodriguez 2014]</dc:description>				
+		<m3:hasRecommendation rdf:resource="&agri-dataset;NeedIrrigation"/> 			
+
+	</agri:Status>
+	
+	<agri:Status rdf:about="MediumDrought">		
+		<rdfs:label xml:lang="en">MediumDrought</rdfs:label>
+		<rdfs:label xml:lang="fr"></rdfs:label>
+		<rdfs:comment xml:lang="en"></rdfs:comment>
+		<dc:description xml:lang="en">IF m3:Luminosity greaterThan 150 and LowerThan 750 m3:Lux THEN MediumLighting [Rodriguez 2014]</dc:description>				
+		<m3:hasRecommendation rdf:resource="&agri-dataset;NeedIrrigation"/> 			
+
+	</agri:Status>
+	
+	<agri:Status rdf:about="NoDrought">		
+		<rdfs:label xml:lang="en">NoDrought</rdfs:label>
+		<rdfs:label xml:lang="fr"></rdfs:label>
+		<rdfs:comment xml:lang="en"></rdfs:comment>
+		<dc:description xml:lang="en">Rule: IF m3:Luminosity greaterThan 20 and LowerThan 150 m3:Lux THEN LowLighting [Rodriguez 2014]</dc:description>				
+		<m3:hasRecommendation rdf:resource="&agri-dataset;StopIrrigation"/> 			
+
+	</agri:Status>
+	
+
+	<!-- ################################################ Activity ############################################################################ -->
+	
+	<agri:Status rdf:about="Need Irrigation">		
+		<rdfs:label xml:lang="en">NeedIrrigation</rdfs:label>
+		<rdfs:comment xml:lang="en"></rdfs:comment>
+		<m3:hasRecommendation rdf:resource="&agri-dataset;NeedIrrigation"/> 	
+	</agri:Status>
+	
+	<agri:Status rdf:about="Stop Irrigation">		
+		<rdfs:label xml:lang="en">StopIrrigation</rdfs:label>
+		<rdfs:comment xml:lang="en"></rdfs:comment>
+		<m3:hasRecommendation rdf:resource="&agri-dataset;StopIrrigation"/> 	
+	</agri:Status>
+	
+	
+	
+	<!-- ################################################ TEMPERATURE ############################################################################ -->
+		
+	<agri:Status rdf:about="LowTemperature">		
+		<rdfs:label xml:lang="en">LowTemperature</rdfs:label>
+		<rdfs:label xml:lang="fr">Basse Tempetature</rdfs:label>
+		<rdfs:comment xml:lang="en">Room Temperature is considered as LOW when less than 25 Degree Celcius. This rule has been designed for the WWW Demo Paper 2017</rdfs:comment>
+		<dc:description xml:lang="en">Rule: IF m3:Temperature lessThan 25 m3:DegreeCelsius THEN LowTemperature [Pankesh et al. WWW Demo Paper 2017]</dc:description>	
+		<m3:hasRecommendation rdf:resource="&m3;Alert"/> 	
+	</agri:Status>
+		
+	<agri:Status rdf:about="NormalTemperature">		
+		<rdfs:label xml:lang="en">NormalTemperature</rdfs:label>
+		<rdfs:label xml:lang="fr"></rdfs:label>
+		<rdfs:comment xml:lang="en"></rdfs:comment>
+		<dc:description xml:lang="en">IF m3:Temperature greaterThan 20 m3:DegreeCelsius AND lessThan 25 m3:DegreeCelsius THEN RoomTemperature [Kofler 2011]</dc:description>		
+		<m3:hasRecommendation rdf:resource="&m3;NothingAbnormal"/> 			
+	</agri:Status>
+	
+	<agri:Status rdf:about="Heat">		
+		<rdfs:label xml:lang="en">Heat</rdfs:label>
+		<rdfs:label xml:lang="fr"></rdfs:label>
+		<rdfs:comment xml:lang="en"></rdfs:comment>
+		<dc:description xml:lang="en">IF m3:Temperature greaterThan 30 m3:DegreeCelsius THEN Heat [Kofler 2011]</dc:description>	
+	</agri:Status>
+	
+	<agri:Status rdf:about="ExtremeHeat">		
+			<rdfs:label xml:lang="en">ExtremeHeat</rdfs:label>
+			<rdfs:label xml:lang="fr"></rdfs:label>
+			<rdfs:comment xml:lang="en"></rdfs:comment>
+			<dc:description xml:lang="en">IF m3:Temperature greaterThan 37 m3:DegreeCelsius THEN ExtremeHeat [Kofler 2011]</dc:description>	
+			<m3:hasRecommendation rdf:resource="&m3;Alert"/> 			
+	</agri:Status>
+	
+	
+</rdf:RDF>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:m3="http://sensormeasurement.appspot.com/m3#" > 
+  <rdf:Description rdf:about="http://sensormeasurement.appspot.com/m3#home">
+    <rdf:type rdf:resource="http://sensormeasurement.appspot.com/m3#FeatureOfInterest"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sensormeasurement.appspot.com/m3#urn:home:uuid:c68ad78b-09eb-4303-ae3c-d5d23149ee96">
+    <m3:produces rdf:resource="http://sensormeasurement.appspot.com/m3#Measurement3"/>
+    <m3:produces rdf:resource="http://sensormeasurement.appspot.com/m3#Measurement2"/>
+    <m3:produces rdf:resource="http://sensormeasurement.appspot.com/m3#Measurement1"/>
+    <m3:observes rdf:resource="http://sensormeasurement.appspot.com/m3#home"/>
+    <m3:produces rdf:resource="http://sensormeasurement.appspot.com/m3#Measurement0"/>
+    <rdf:type rdf:resource="http://sensormeasurement.appspot.com/m3#Sensor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sensormeasurement.appspot.com/m3#Measurement0">
+    <m3:hasUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#string"> </m3:hasUnit>
+    <m3:hasDateTimeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">0.0</m3:hasDateTimeValue>
+    <m3:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</m3:hasValue>
+    <m3:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">presence</m3:hasName>
+    <rdf:type rdf:resource="http://sensormeasurement.appspot.com/m3#Measurement"/>
+    <rdf:type rdf:resource="http://sensormeasurement.appspot.com/m3#Presence"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sensormeasurement.appspot.com/m3#Measurement2">
+    <m3:hasUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Decibel</m3:hasUnit>
+    <m3:hasDateTimeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">0.0</m3:hasDateTimeValue>
+    <m3:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">80.0</m3:hasValue>
+    <m3:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">sound</m3:hasName>
+    <rdf:type rdf:resource="http://sensormeasurement.appspot.com/m3#Measurement"/>
+    <rdf:type rdf:resource="http://sensormeasurement.appspot.com/m3#Sound"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sensormeasurement.appspot.com/m3#Measurement1">
+    <m3:hasUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lux</m3:hasUnit>
+    <m3:hasDateTimeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">0.0</m3:hasDateTimeValue>
+    <m3:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">0.0</m3:hasValue>
+    <m3:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">luminosity</m3:hasName>
+    <rdf:type rdf:resource="http://sensormeasurement.appspot.com/m3#Measurement"/>
+    <rdf:type rdf:resource="http://sensormeasurement.appspot.com/m3#BuildingLuminosity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://sensormeasurement.appspot.com/m3#Measurement3">
+    <m3:hasUnit rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cel</m3:hasUnit>
+    <m3:hasDateTimeValue rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">1.374069830362E12</m3:hasDateTimeValue>
+    <m3:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30.0</m3:hasValue>
+    <m3:hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">temperature</m3:hasName>
+    <rdf:type rdf:resource="http://sensormeasurement.appspot.com/m3#Measurement"/>
+    <rdf:type rdf:resource="http://sensormeasurement.appspot.com/m3#RoomTemperature"/>
+  </rdf:Description>
+</rdf:RDF>
