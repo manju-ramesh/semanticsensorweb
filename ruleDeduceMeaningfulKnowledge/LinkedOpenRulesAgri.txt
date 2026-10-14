@@ -1,0 +1,129 @@
+@prefix rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+@prefix owl: http://www.w3.org/2002/07/owl#
+@prefix rdfs: http://www.w3.org/2000/01/rdf-schema#
+@prefix xsd: http://www.w3.org/2001/XMLSchema#
+@prefix sosa: http://www.w3.org/ns/sosa/
+@prefix ssn: http://www.w3.org/ns/ssn/
+@prefix ssnagri: http://www.semanticweb.org/csreiitb/ontologies/ssnagri#
+
+
+################ Environmental Parameter values from Sensors
+[RainfallBenoda: 
+		(ssnagri:ObsRainfallBenoda sosa:hasSimpleResult ?v)
+			  ->
+			  (ssnagri:Rainfall_Benoda ssnagri:hasEnvParameterValue ?v)
+]
+[RainfallNagziri: 
+		(ssnagri:ObsRainfallNagziri sosa:hasSimpleResult ?v)
+			  ->
+			  (ssnagri:Rainfall_Nagziri ssnagri:hasEnvParameterValue ?v)
+]
+[TemperatureNagziri: 
+		(ssnagri:ObsTempNagziri sosa:hasSimpleResult ?v)
+			  ->
+			  (ssnagri:Temperature_Nagziri ssnagri:hasEnvParameterValue ?v)
+]
+[TemperatureBenoda: 
+		(ssnagri:ObsTempBenoda sosa:hasSimpleResult ?v)
+			  ->
+			  (ssnagri:Temperature_Benoda ssnagri:hasEnvParameterValue ?v)
+]
+
+############### Remedies
+[RemediesForSevere: 
+	(?c rdf:type ssnagri:Crop)
+	(?c ssnagri:hasDisease ssnagri:Gummosis) 
+	(?d rdf:type ssnagri:Disease) 
+	(?c ssnagri:hasDiseaseSeverity ssnagri:SevereDisease) 
+		-> (?c ssnagri:hasSuggestedRemedies ssnagri:BarkTrimming)
+]
+
+[RemediesForVerySevere: 
+	(?c rdf:type ssnagri:Crop)
+	(?c ssnagri:hasDisease ssnagri:Gummosis) 
+	(?d rdf:type ssnagri:Disease) 
+	(?c ssnagri:hasDiseaseSeverity ssnagri:VerySevereDisease) 
+		-> (?c ssnagri:hasSuggestedRemedies ssnagri:SoilSolarization)
+]
+[RemediesForOffsetOfDisease: 
+	(?c rdf:type ssnagri:Crop)
+	(?c ssnagri:hasDisease ssnagri:Gummosis) 
+	(?d rdf:type ssnagri:Disease) 
+	(?c ssnagri:hasDiseaseSeverity ssnagri:OffsetOfDisease) 
+		-> (?c ssnagri:hasSuggestedRemedies  ssnagri:ImproveDrainage)
+		   (?c ssnagri:hasSuggestedRemedies  ssnagri:FungicideSpraying)
+]
+
+###############Disease Severity level from Severity Index Value
+[SeverityNoDisease:
+	(?c rdf:type ssnagri:Crop)  
+	(?c ssnagri:hasDiseaseSeverityIndex ?i) 
+	(?i ssnagri:hasSeverityIndexValue ?v) 
+	lessThan(?v,1) 
+		-> (?c ssnagri:hasDiseaseSeverity ssnagri:NoDisease)
+]
+[SeverityOffsetOfDisease:
+	(?c rdf:type ssnagri:Crop)  
+	(?c ssnagri:hasDiseaseSeverityIndex ?i) 
+	(?i ssnagri:hasSeverityIndexValue ?v) 
+	greaterThan(?v,1)
+	lessThan(?v,2)
+		->  (?c ssnagri:hasDiseaseSeverity ssnagri:OffsetOfDisease)
+			(?c ssnagri:hasDisease ssnagri:Gummosis)
+]
+[SeverityModerateDisease:
+	(?c rdf:type ssnagri:Crop)  
+	(?c ssnagri:hasDiseaseSeverityIndex ?i) 
+	(?i ssnagri:hasSeverityIndexValue ?v) 
+	greaterThan(?v,2)
+	lessThan(?v,3)
+		->  (?c ssnagri:hasDiseaseSeverity ssnagri:ModerateDisease)
+			(?c ssnagri:hasDisease ssnagri:Gummosis)
+]
+[SeveritySevereDisease:
+	(?c rdf:type ssnagri:Crop)  
+	(?c ssnagri:hasDiseaseSeverityIndex ?i) 
+	(?i ssnagri:hasSeverityIndexValue ?v) 
+	greaterThan(?v,3)
+	lessThan(?v,4)
+		->  (?c ssnagri:hasDiseaseSeverity ssnagri:SevereDisease)
+			(?c ssnagri:hasDisease ssnagri:Gummosis)
+]
+[SeverityVerySevereDisease:
+	(?c rdf:type ssnagri:Crop)  
+	(?c ssnagri:hasDiseaseSeverityIndex ?i) 
+	(?i ssnagri:hasSeverityIndexValue ?v) 
+	greaterThan(?v,4)
+			->  (?c ssnagri:hasDiseaseSeverity ssnagri:VerySevereDisease)
+				(?c ssnagri:hasDisease ssnagri:Gummosis)
+]
+################# Rule for Gummosis Severity Index
+[
+	(?cr rdf:type ssnagri:Crop) 
+	(?cr ssnagri:isLocatedIn ?loc) 
+	(?loc ssnagri:hasTemperature ?t)
+	(?loc ssnagri:hasRainfall ?r) 
+	(?cr ssnagri:hasCab ?c)
+	(?cr ssnagri:hasLAI ?l)
+	(?cr ssnagri:hasGSI ?g)
+	(?t ssnagri:hasEnvParameterValue ?t1)
+	 product(?t1, -0.0666, ?t2) 
+	(?r ssnagri:hasEnvParameterValue ?r1) 
+	 product(-0.0033, ?r1, ?r2) 
+	(?l ssnagri:hasPlantParameterValue ?l1) 
+	 product(-0.0148, ?l1, ?l2) 
+	(?c ssnagri:hasPlantParameterValue ?c1)
+	 product(0.2134, ?c1,?c2) 
+	 sum(?t2,?r2,?sum1)
+	 sum(?l2,?c2,?sum2)
+	 sum(?sum1,?sum2,?sum3)
+	 sum(?sum3,3.2631,?gs)
+		-> (?g ssnagri:hasSeverityIndexValue ?gs)
+]
+
+
+
+
+ 
+
+   
